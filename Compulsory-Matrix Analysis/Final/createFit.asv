@@ -1,0 +1,23 @@
+function [fitresult, goodness] = createFit(date_sampled, num_of_infected_sampled)
+%% Fit: 'new_positive_infected_curve'.
+[xData, yData] = prepareCurveData( date_sampled, num_of_infected_sampled );
+
+% 确定拟合方式和上下限等
+fit_type = fittype( 'gauss1');
+options = fitoptions( 'Method', 'NonlinearLeastSquares' );
+options.Lower = [-Inf -Inf 0];
+options.StartPoint = [25173 14 8.91227016419074];
+
+% 使用Fit函数进行拟合
+[fitresult, goodness] = fit( xData, yData, fit_type, options );
+
+% Plot fit with data.
+%figure( 'Name', 'new_positive_infected_curve' );
+%h = plot( fitresult, xData, yData, 'predobs', 0.99 );
+%legend( h, 'num_of_symptomatic_infected vs. x', 'new_positive_infected_curve', 'Lower bounds (new_positive_infected_curve)', 'Upper bounds (new_positive_infected_curve)', 'Location', 'NorthEast', 'Interpreter', 'none' );
+% Label axes
+%xlabel( 'x', 'Interpreter', 'none' );
+%ylabel( 'num_of_symptomatic_infected', 'Interpreter', 'none' );
+%grid on
+
+

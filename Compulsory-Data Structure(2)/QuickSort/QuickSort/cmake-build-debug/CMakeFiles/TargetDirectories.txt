@@ -1,0 +1,3 @@
+D:/C/QuickSort/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/C/QuickSort/cmake-build-debug/CMakeFiles/QuickSort.dir
+D:/C/QuickSort/cmake-build-debug/CMakeFiles/rebuild_cache.dir
